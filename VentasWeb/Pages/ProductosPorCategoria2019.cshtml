@@ -1,0 +1,43 @@
+﻿@page
+@model ProductosPorCategoria2019Model
+@{
+    ViewData["Title"] = "Productos por Categoría (2019)";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form method="get">
+    <div class="form-group">
+        <label for="categoriaSelect">Seleccione una categoría:</label>
+        <select asp-for="CategoriaSeleccionadaId" asp-items="Model.CategoriasConVentas" class="form-control" id="categoriaSelect">
+            <option value="">-- Todas --</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Filtrar</button>
+</form>
+
+@if (Model.ProductosFiltrados != null && Model.ProductosFiltrados.Count > 0)
+{
+    <h3 class="mt-4">Productos vendidos en 2019</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Categoría</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var producto in Model.ProductosFiltrados)
+            {
+                <tr>
+                    <td>@producto.Nombre</td>
+                    <td>@producto.Categoria?.Nombre</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else if (Model.CategoriaSeleccionadaId != null)
+{
+    <p class="text-muted mt-3">No hay productos registrados para esta categoría en 2019.</p>
+}
