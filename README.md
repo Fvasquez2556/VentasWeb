@@ -13,10 +13,12 @@ Aplicación web ASP.NET Core con Razor Pages para gestionar y visualizar product
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tu-usuario/VentasWeb.git
+   git clone https://github.com/Fvasquez2556/VentasWeb
    ```
 
 2. Abre `VentasWeb.sln` con Visual Studio 2022 o superior.
+
+antes de ejecutar el ptoyecto, verificar si las dependencias correspondientes estan instaladas, de no ser así o no estar seguro, leer el manual de usuario. 
 
 3. Ejecuta el proyecto con `Ctrl + F5` (sin depuración).
 
